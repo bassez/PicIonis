@@ -11,16 +11,14 @@ import Firebase
 
 class ViewController: UIViewController {
 
+    // inputs
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    @IBOutlet weak var labelErr: UILabel!
-    
-    private let SIGNUP_SEGUE = "SignUpSegue"
-    private let HOME_SEGUE = "HomeSegue"
-    /** @var handle
-     @brief The handler for the auth state listener, to allow cancelling later.
-     */
+    // Création de constantes pour les identifiants des différents segues
+    // Ça nous permet de nous déplacer entre les views
+    private let SIGNUP_SEGUE = "SignUpSegue" // pour aller sur la vue d'inscription
+    private let HOME_SEGUE = "HomeSegue" // pour aller à l'accueil après la connexion
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,21 +35,34 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    // bouton connexion
     @IBAction func signIn(_ sender: UIButton) {
+        // connexion
         Auth.auth().signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             // ...
             if(user != nil) {
-                self.labelErr.text = ""
                 self.email.text = ""
                 self.password.text = ""
-                self.performSegue(withIdentifier: self.HOME_SEGUE, sender: nil)
+                self.performSegue(withIdentifier: self.HOME_SEGUE, sender: nil) // on appelle la segue home après que la connexion ce soit bien passé
             } else {
-                self.labelErr.text = "Echec de la connexion"
+                // crée une alerte pour l'utilisateur
+                let alert = UIAlertController(title: "Erreur", message: "Echec de la connexion.", preferredStyle: UIAlertControllerStyle.alert)
+                
+                // ajoute une action (bouton)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                
+                // Affiche l'alerte
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
     
+    // bouton pas de compte ?
     @IBAction func signUpView(_ sender: Any) {
+        self.email.text = ""
+        self.password.text = ""
+        
+        // on appelle la segue signup pour aller sur la page inscription
         performSegue(withIdentifier: SIGNUP_SEGUE, sender: nil)
     }
 }

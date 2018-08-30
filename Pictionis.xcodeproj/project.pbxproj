@@ -18,6 +18,7 @@
 		1F41412B21343C1E00F4451F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F41412A21343C1E00F4451F /* GoogleService-Info.plist */; };
 		1F4141372136C87400F4451F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4141362136C87400F4451F /* SignUpVC.swift */; };
 		1F4CB3642136F2CF0066F92A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CB3632136F2CF0066F92A /* HomeVC.swift */; };
+		1F4CB36621381FF60066F92A /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CB36521381FF60066F92A /* CanvasView.swift */; };
 		77A79485374C8A2163EC9C7D /* Pods_PictionisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121989F9B0B5E295A9E2E2B5 /* Pods_PictionisUITests.framework */; };
 		B5B8A40DC857504E1D08153C /* Pods_PictionisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8CA2D54447E63BECD579C7 /* Pods_PictionisTests.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +60,7 @@
 		1F41412A21343C1E00F4451F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F4141362136C87400F4451F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		1F4CB3632136F2CF0066F92A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1F4CB36521381FF60066F92A /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		6E8CA2D54447E63BECD579C7 /* Pods_PictionisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictionisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700FB54078252158194EECA0 /* Pods-PictionisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictionisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictionisUITests/Pods-PictionisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		841D9369376B5DFBCDDBAFC5 /* Pods-Pictionis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pictionis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pictionis/Pods-Pictionis.release.xcconfig"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				1F4141362136C87400F4451F /* SignUpVC.swift */,
 				1F4CB3632136F2CF0066F92A /* HomeVC.swift */,
 				1F4140FE21343B3B00F4451F /* ViewController.swift */,
+				1F4CB36521381FF60066F92A /* CanvasView.swift */,
 				1F41410021343B3B00F4451F /* Main.storyboard */,
 				1F41410321343B4500F4451F /* Assets.xcassets */,
 				1F41410521343B4500F4451F /* LaunchScreen.storyboard */,
@@ -428,6 +431,7 @@
 			files = (
 				1F4140FF21343B3B00F4451F /* ViewController.swift in Sources */,
 				1F4CB3642136F2CF0066F92A /* HomeVC.swift in Sources */,
+				1F4CB36621381FF60066F92A /* CanvasView.swift in Sources */,
 				1F4140FD21343B3B00F4451F /* AppDelegate.swift in Sources */,
 				1F4141372136C87400F4451F /* SignUpVC.swift in Sources */,
 			);

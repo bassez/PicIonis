@@ -37,7 +37,7 @@
                                         <rect key="frame" x="30" y="86.5" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC2-rj-4Pg">
                                         <rect key="frame" x="140.5" y="124.5" width="74" height="20.5"/>
@@ -49,7 +49,7 @@
                                         <rect key="frame" x="30" y="153" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D88-SE-7t9">
                                         <rect key="frame" x="131.5" y="191" width="92" height="30"/>
@@ -87,7 +87,6 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="mKi-iP-siS" id="Wo5-mo-Pyb"/>
-                        <outlet property="labelErr" destination="VbH-br-Gaq" id="fU4-x1-2nj"/>
                         <outlet property="password" destination="RXl-NA-IQU" id="sMY-Ct-DoQ"/>
                         <segue destination="t32-K3-cmt" kind="show" identifier="SignUpSegue" id="bz7-QS-VoY"/>
                         <segue destination="woA-Wd-qcB" kind="show" identifier="HomeSegue" id="xPD-bq-w7v"/>
@@ -105,9 +104,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Huw-eb-Bab">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Huw-eb-Bab">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="PictIonis" id="Lk2-NL-6t1">
                                         <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="w20-26-qlR">
@@ -115,17 +113,38 @@
                                                 <action selector="disconnect:" destination="woA-Wd-qcB" id="jaY-aO-Non"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Clear" id="dXi-BM-U24">
+                                            <connections>
+                                                <action selector="clearCanvas:" destination="woA-Wd-qcB" id="jwI-fs-wbP"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIg-KQ-Foe" customClass="CanvasView" customModule="Pictionis" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dIg-KQ-Foe" firstAttribute="leading" secondItem="4i1-xw-Kft" secondAttribute="leading" id="JUK-bS-ouq"/>
+                            <constraint firstItem="Huw-eb-Bab" firstAttribute="top" secondItem="4i1-xw-Kft" secondAttribute="top" id="McD-md-a6k"/>
+                            <constraint firstItem="Huw-eb-Bab" firstAttribute="leading" secondItem="4i1-xw-Kft" secondAttribute="leading" id="OVJ-hq-yzs"/>
+                            <constraint firstItem="dIg-KQ-Foe" firstAttribute="bottom" secondItem="4i1-xw-Kft" secondAttribute="bottom" id="RHQ-OI-xyh"/>
+                            <constraint firstItem="dIg-KQ-Foe" firstAttribute="trailing" secondItem="4i1-xw-Kft" secondAttribute="trailing" id="Rkn-gq-La3"/>
+                            <constraint firstItem="Huw-eb-Bab" firstAttribute="trailing" secondItem="4i1-xw-Kft" secondAttribute="trailing" id="a5C-wl-NBB"/>
+                            <constraint firstItem="dIg-KQ-Foe" firstAttribute="top" secondItem="Huw-eb-Bab" secondAttribute="bottom" id="b19-di-m6K"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4i1-xw-Kft"/>
                     </view>
+                    <connections>
+                        <outlet property="canvasView" destination="dIg-KQ-Foe" id="MXD-mn-dqh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUm-MB-OwI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-215" y="874"/>
+            <point key="canvasLocation" x="-215.19999999999999" y="873.91304347826099"/>
         </scene>
         <!--SignUpView-->
         <scene sceneID="HCB-WJ-GIT">
@@ -154,7 +173,7 @@
                                         <rect key="frame" x="30" y="86.5" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1A-mE-GhK">
                                         <rect key="frame" x="140.5" y="124.5" width="74" height="20.5"/>
@@ -166,7 +185,7 @@
                                         <rect key="frame" x="30" y="153" width="295" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsb-uX-hLq">
                                         <rect key="frame" x="145.5" y="191" width="64" height="30"/>
@@ -209,7 +228,6 @@
                     </view>
                     <connections>
                         <outlet property="email" destination="gSJ-S8-KWk" id="nQS-IU-TJ4"/>
-                        <outlet property="labelErr" destination="DVx-0b-UZZ" id="684-92-wLx"/>
                         <outlet property="password" destination="blG-Rr-YLc" id="jiG-xT-A3z"/>
                     </connections>
                 </viewController>

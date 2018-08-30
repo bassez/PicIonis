@@ -11,11 +11,10 @@ import Firebase
 
 
 class SignUpVC: UIViewController {
-
+    
+    // Inputs
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    
-    @IBOutlet weak var labelErr: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +23,8 @@ class SignUpVC: UIViewController {
     }
     
     func viewWillAppear() {
+        // on met les champs à vide pour ne pas avoir
+        // les informations précédentes quand on revient sur la vue
         email.text = ""
         password.text = ""
     }
@@ -33,20 +34,31 @@ class SignUpVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // bouton Se connecter
     @IBAction func signUp(_ sender: UIButton) {
+        // connexion
         Auth.auth().createUser(withEmail: email.text!, password: self.password.text!) { (authResult, error) in
             guard let user = authResult?.user else {
-                self.labelErr.text = "Erreur lors de l'inscription"
+                
+                // crée une alerte pour l'utilisateur
+                let alert = UIAlertController(title: "Erreur", message: "Erreur lors de l'inscription.", preferredStyle: UIAlertControllerStyle.alert)
+                
+                // ajoute une action (bouton)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                
+                // Affiche l'alerte
+                self.present(alert, animated: true, completion: nil)
+                
                 return
             }
             
-            self.labelErr.text = ""
-            self.email.text = ""
-            self.password.text = ""
+            // on revient à la vue d'avant i.e la vue de connexion
             self.dismiss(animated: true, completion: nil);
         }
     }
+    
+    // bouton retour sur la barre de navigation
     @IBAction func goBack(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil);
+        self.dismiss(animated: true, completion: nil); // on revient à la vue de connexion
     }
 }

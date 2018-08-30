@@ -7,21 +7,42 @@
 //
 
 import UIKit
+import Firebase
 
 class HomeVC: UIViewController {
 
+    // canvasView avec tous les éléments de la class canvasView
+    @IBOutlet weak var canvasView: CanvasView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if Auth.auth().currentUser == nil { // Vérifie s'il y a un utilisateur de connecté
+            dismiss(animated: true, completion: nil) // retourne à la vue précédente
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    func getUserID() -> String {
+        return Auth.auth().currentUser!.uid;
+    }
+    
+    // bouton déconnecter
     @IBAction func disconnect(_ sender: UIBarButtonItem) {
-        dismiss(animated: true, completion: nil)
+        if Auth.auth().currentUser != nil { // Vérifie s'il y a un utilisateur de connecté
+            do {
+                try Auth.auth().signOut(); // déconnecte l'utilisateur
+                dismiss(animated: true, completion: nil) // retourne à la vue précédente
+            } catch {
+                
+            }
+        }
+    }
+    
+    // function clear du canvas
+    @IBAction func clearCanvas(_ sender: UIBarButtonItem) {
+        canvasView.clearCanvas()
     }
 }
