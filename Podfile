@@ -7,6 +7,7 @@ target 'Pictionis' do
 
   # Pods for Pictionis
   pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
   pod 'Firebase/Database'
   pod 'Firebase/Messaging'
   pod 'Firebase/Invites'

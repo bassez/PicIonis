@@ -104,42 +104,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Huw-eb-Bab">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <navigationItem title="PictIonis" id="Lk2-NL-6t1">
-                                        <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="w20-26-qlR">
-                                            <connections>
-                                                <action selector="disconnect:" destination="woA-Wd-qcB" id="jaY-aO-Non"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Clear" id="dXi-BM-U24">
-                                            <connections>
-                                                <action selector="clearCanvas:" destination="woA-Wd-qcB" id="jwI-fs-wbP"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIg-KQ-Foe" customClass="CanvasView" customModule="Pictionis" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" translatesAutoresizingMaskIntoConstraints="NO" id="cTC-eS-HOf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Huw-eb-Bab">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="MgN-as-7cn"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="X3c-rb-4hg"/>
+                                        </constraints>
+                                        <items>
+                                            <navigationItem title="PictIonis" id="Lk2-NL-6t1">
+                                                <barButtonItem key="leftBarButtonItem" title="Déconnexion" id="w20-26-qlR">
+                                                    <connections>
+                                                        <action selector="disconnect:" destination="woA-Wd-qcB" id="jaY-aO-Non"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                                <barButtonItem key="rightBarButtonItem" title="Clear" id="dXi-BM-U24">
+                                                    <connections>
+                                                        <action selector="clearCanvas:" destination="woA-Wd-qcB" id="jwI-fs-wbP"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dIg-KQ-Foe" customClass="CanvasView" customModule="Pictionis" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="280"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="280" id="eri-m6-ZJ7"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VXR-VS-RwV">
+                                        <rect key="frame" x="0.0" y="330" width="375" height="257"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageCell" id="Jsb-k9-9qw">
+                                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jsb-k9-9qw" id="xS1-SR-1QA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtF-FV-bQo">
+                                        <rect key="frame" x="0.0" y="587" width="375" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kw5-x2-nQX">
+                                                <rect key="frame" x="285" y="15" width="70" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="70" id="4hK-DJ-EHZ"/>
+                                                </constraints>
+                                                <state key="normal" title="Envoyer"/>
+                                                <connections>
+                                                    <action selector="sendMessage:" destination="woA-Wd-qcB" eventType="touchUpInside" id="3gZ-NO-x68"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oVR-WN-zX2">
+                                                <rect key="frame" x="20" y="15" width="250" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Kw5-x2-nQX" secondAttribute="trailing" constant="20" id="0JN-Sw-bEd"/>
+                                            <constraint firstItem="Kw5-x2-nQX" firstAttribute="leading" secondItem="oVR-WN-zX2" secondAttribute="trailing" constant="15" id="52l-QY-8OV"/>
+                                            <constraint firstItem="oVR-WN-zX2" firstAttribute="top" secondItem="YtF-FV-bQo" secondAttribute="top" constant="15" id="D3f-ai-17Q"/>
+                                            <constraint firstAttribute="height" constant="60" id="Ttq-iO-1o3"/>
+                                            <constraint firstItem="oVR-WN-zX2" firstAttribute="leading" secondItem="YtF-FV-bQo" secondAttribute="leading" constant="20" id="VY1-9E-G33"/>
+                                            <constraint firstItem="Kw5-x2-nQX" firstAttribute="top" secondItem="YtF-FV-bQo" secondAttribute="top" constant="15" id="XiG-14-HO9"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Huw-eb-Bab" secondAttribute="trailing" id="1HX-cs-2te"/>
+                                    <constraint firstAttribute="trailing" secondItem="dIg-KQ-Foe" secondAttribute="trailing" id="5vn-Hd-dn0"/>
+                                    <constraint firstItem="VXR-VS-RwV" firstAttribute="leading" secondItem="cTC-eS-HOf" secondAttribute="leading" id="6jz-GK-i6N"/>
+                                    <constraint firstItem="YtF-FV-bQo" firstAttribute="leading" secondItem="cTC-eS-HOf" secondAttribute="leading" id="9wd-eO-p3i"/>
+                                    <constraint firstItem="YtF-FV-bQo" firstAttribute="top" secondItem="VXR-VS-RwV" secondAttribute="bottom" id="BCk-jf-1xY"/>
+                                    <constraint firstAttribute="bottom" secondItem="YtF-FV-bQo" secondAttribute="bottom" id="Ckc-hd-H2R"/>
+                                    <constraint firstItem="dIg-KQ-Foe" firstAttribute="top" secondItem="Huw-eb-Bab" secondAttribute="bottom" id="GvR-UT-K0B"/>
+                                    <constraint firstItem="Huw-eb-Bab" firstAttribute="top" secondItem="cTC-eS-HOf" secondAttribute="top" id="Oef-XT-JoM"/>
+                                    <constraint firstItem="Huw-eb-Bab" firstAttribute="leading" secondItem="cTC-eS-HOf" secondAttribute="leading" id="Qbz-fQ-qOQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="VXR-VS-RwV" secondAttribute="trailing" id="RnY-Qw-8Jy"/>
+                                    <constraint firstAttribute="trailing" secondItem="YtF-FV-bQo" secondAttribute="trailing" id="bMm-VB-cE6"/>
+                                    <constraint firstItem="YtF-FV-bQo" firstAttribute="top" secondItem="VXR-VS-RwV" secondAttribute="bottom" id="jDC-gv-Wzi"/>
+                                    <constraint firstItem="VXR-VS-RwV" firstAttribute="top" secondItem="dIg-KQ-Foe" secondAttribute="bottom" id="sFB-Oe-fPj"/>
+                                    <constraint firstItem="dIg-KQ-Foe" firstAttribute="leading" secondItem="cTC-eS-HOf" secondAttribute="leading" id="tgh-EI-zN9"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="dIg-KQ-Foe" firstAttribute="leading" secondItem="4i1-xw-Kft" secondAttribute="leading" id="JUK-bS-ouq"/>
-                            <constraint firstItem="Huw-eb-Bab" firstAttribute="top" secondItem="4i1-xw-Kft" secondAttribute="top" id="McD-md-a6k"/>
-                            <constraint firstItem="Huw-eb-Bab" firstAttribute="leading" secondItem="4i1-xw-Kft" secondAttribute="leading" id="OVJ-hq-yzs"/>
-                            <constraint firstItem="dIg-KQ-Foe" firstAttribute="bottom" secondItem="4i1-xw-Kft" secondAttribute="bottom" id="RHQ-OI-xyh"/>
-                            <constraint firstItem="dIg-KQ-Foe" firstAttribute="trailing" secondItem="4i1-xw-Kft" secondAttribute="trailing" id="Rkn-gq-La3"/>
-                            <constraint firstItem="Huw-eb-Bab" firstAttribute="trailing" secondItem="4i1-xw-Kft" secondAttribute="trailing" id="a5C-wl-NBB"/>
-                            <constraint firstItem="dIg-KQ-Foe" firstAttribute="top" secondItem="Huw-eb-Bab" secondAttribute="bottom" id="b19-di-m6K"/>
+                            <constraint firstItem="cTC-eS-HOf" firstAttribute="leading" secondItem="i0a-re-h0I" secondAttribute="leading" id="3Gb-rx-VKi"/>
+                            <constraint firstItem="cTC-eS-HOf" firstAttribute="top" secondItem="4i1-xw-Kft" secondAttribute="top" id="NT9-fP-dRW"/>
+                            <constraint firstItem="4i1-xw-Kft" firstAttribute="trailing" secondItem="cTC-eS-HOf" secondAttribute="trailing" id="OVu-qA-vQm"/>
+                            <constraint firstAttribute="bottom" secondItem="cTC-eS-HOf" secondAttribute="bottom" id="iFb-6q-Luq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4i1-xw-Kft"/>
                     </view>
                     <connections>
                         <outlet property="canvasView" destination="dIg-KQ-Foe" id="MXD-mn-dqh"/>
+                        <outlet property="messageTableView" destination="VXR-VS-RwV" id="gdB-d4-N4L"/>
+                        <outlet property="messageTextField" destination="oVR-WN-zX2" id="IHf-EL-ru3"/>
+                        <outlet property="sendButton" destination="Kw5-x2-nQX" id="0Mf-6p-kXl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUm-MB-OwI" userLabel="First Responder" sceneMemberID="firstResponder"/>

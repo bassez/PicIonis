@@ -15,10 +15,12 @@
 		1F41410721343B4500F4451F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F41410521343B4500F4451F /* LaunchScreen.storyboard */; };
 		1F41411221343B4600F4451F /* PictionisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F41411121343B4600F4451F /* PictionisTests.swift */; };
 		1F41411D21343B4600F4451F /* PictionisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F41411C21343B4600F4451F /* PictionisUITests.swift */; };
-		1F41412B21343C1E00F4451F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F41412A21343C1E00F4451F /* GoogleService-Info.plist */; };
 		1F4141372136C87400F4451F /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4141362136C87400F4451F /* SignUpVC.swift */; };
 		1F4CB3642136F2CF0066F92A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CB3632136F2CF0066F92A /* HomeVC.swift */; };
 		1F4CB36621381FF60066F92A /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CB36521381FF60066F92A /* CanvasView.swift */; };
+		1F4CB368213838050066F92A /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4CB367213838040066F92A /* Message.swift */; };
+		1FEF72BC213E935F00775F41 /* MessageTtest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FEF72BB213E935F00775F41 /* MessageTtest.swift */; };
+		1FEF72BE213EB45500775F41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FEF72BD213EB45500775F41 /* GoogleService-Info.plist */; };
 		77A79485374C8A2163EC9C7D /* Pods_PictionisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 121989F9B0B5E295A9E2E2B5 /* Pods_PictionisUITests.framework */; };
 		B5B8A40DC857504E1D08153C /* Pods_PictionisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8CA2D54447E63BECD579C7 /* Pods_PictionisTests.framework */; };
 /* End PBXBuildFile section */
@@ -57,10 +59,13 @@
 		1F41411821343B4600F4451F /* PictionisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PictionisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F41411C21343B4600F4451F /* PictionisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictionisUITests.swift; sourceTree = "<group>"; };
 		1F41411E21343B4600F4451F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F41412A21343C1E00F4451F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1F4141362136C87400F4451F /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 		1F4CB3632136F2CF0066F92A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		1F4CB36521381FF60066F92A /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		1F4CB367213838040066F92A /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		1FEF72BB213E935F00775F41 /* MessageTtest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTtest.swift; sourceTree = "<group>"; };
+		1FEF72BD213EB45500775F41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1FEF72BF213EB45800775F41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E8CA2D54447E63BECD579C7 /* Pods_PictionisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PictionisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		700FB54078252158194EECA0 /* Pods-PictionisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictionisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictionisUITests/Pods-PictionisUITests.release.xcconfig"; sourceTree = "<group>"; };
 		841D9369376B5DFBCDDBAFC5 /* Pods-Pictionis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pictionis.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pictionis/Pods-Pictionis.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,7 +127,8 @@
 		1F4140FB21343B3B00F4451F /* Pictionis */ = {
 			isa = PBXGroup;
 			children = (
-				1F41412A21343C1E00F4451F /* GoogleService-Info.plist */,
+				1FEF72BF213EB45800775F41 /* GoogleService-Info.plist */,
+				1FEF72BA213E92F000775F41 /* Model */,
 				1F4140FC21343B3B00F4451F /* AppDelegate.swift */,
 				1F4141362136C87400F4451F /* SignUpVC.swift */,
 				1F4CB3632136F2CF0066F92A /* HomeVC.swift */,
@@ -152,6 +158,16 @@
 				1F41411E21343B4600F4451F /* Info.plist */,
 			);
 			path = PictionisUITests;
+			sourceTree = "<group>";
+		};
+		1FEF72BA213E92F000775F41 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F4CB367213838040066F92A /* Message.swift */,
+				1FEF72BB213E935F00775F41 /* MessageTtest.swift */,
+				1FEF72BD213EB45500775F41 /* GoogleService-Info.plist */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2DD298DADAE05476D66E209D /* Pods */ = {
@@ -287,7 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F41410721343B4500F4451F /* LaunchScreen.storyboard in Resources */,
-				1F41412B21343C1E00F4451F /* GoogleService-Info.plist in Resources */,
+				1FEF72BE213EB45500775F41 /* GoogleService-Info.plist in Resources */,
 				1F41410421343B4500F4451F /* Assets.xcassets in Resources */,
 				1F41410221343B3B00F4451F /* Main.storyboard in Resources */,
 			);
@@ -397,23 +413,33 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Pictionis/Pods-Pictionis-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleAPIClientForREST/GoogleAPIClientForREST.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleAPIClientForREST.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -432,8 +458,10 @@
 				1F4140FF21343B3B00F4451F /* ViewController.swift in Sources */,
 				1F4CB3642136F2CF0066F92A /* HomeVC.swift in Sources */,
 				1F4CB36621381FF60066F92A /* CanvasView.swift in Sources */,
+				1F4CB368213838050066F92A /* Message.swift in Sources */,
 				1F4140FD21343B3B00F4451F /* AppDelegate.swift in Sources */,
 				1F4141372136C87400F4451F /* SignUpVC.swift in Sources */,
+				1FEF72BC213E935F00775F41 /* MessageTtest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

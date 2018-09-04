@@ -24,10 +24,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func viewWillAppear() {
-    }
-    
-    func viewWillDisappear() {
+    override func viewDidAppear(_ animated: Bool) {
+        if (isLoggedIn()) {
+            self.performSegue(withIdentifier: self.HOME_SEGUE, sender: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -35,6 +35,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func isLoggedIn() -> Bool {
+        if Auth.auth().currentUser != nil {
+            return true;
+        }
+        
+        return false;
+    }
+    
     // bouton connexion
     @IBAction func signIn(_ sender: UIButton) {
         // connexion
