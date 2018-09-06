@@ -10,9 +10,6 @@ import Foundation
 import Firebase
 import FirebaseFirestore
 
-protocol DocumentSerializable {
-    init?(dictionary:[String:Any])
-}
 
 struct Message {
     let username:String!

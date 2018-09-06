@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-
+import FirebaseFirestore
 
 class SignUpVC: UIViewController {
     
@@ -16,10 +16,18 @@ class SignUpVC: UIViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
+    var db:Firestore!
+    var connectionDate:Date!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
+        //initialise la reference à la db
+        db = Firestore.firestore()
+        connectionDate = Date()
+
     }
     
     func viewWillAppear() {
@@ -52,6 +60,14 @@ class SignUpVC: UIViewController {
                 return
             }
             
+            self.db.collection("players").document(user.uid).setData(
+                [
+                    "email": user.email,
+                    "online": false,
+                    "state": ""
+                ]
+            )
+                
             // on revient à la vue d'avant i.e la vue de connexion
             self.dismiss(animated: true, completion: nil);
         }
